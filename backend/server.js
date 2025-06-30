@@ -28,6 +28,6 @@ mongoose.connect(process.env.MONGODB_URL)
     console.log("MongoDB connection error:", err.message);
   });
 
-app.listen(8002, () => {
-  console.log("Server is running on port 8002");
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
 });

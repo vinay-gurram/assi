@@ -1,7 +1,7 @@
 const express = require("express");
 const venueRouter = express.Router();
 const Venue = require("../models/Venue");
-const authMiddleware = require("../middleware/authMiddleWare");
+const authMiddleware = require("../middleware/authMiddleware");
 
 
 venueRouter.post("/add-venue", authMiddleware, async (req, res) => {

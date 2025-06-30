@@ -3,7 +3,7 @@ const bookingRouter = express.Router();
 const Booking = require("../models/Booking");
 const Show = require("../models/Show");
 const Movie = require("../models/Movie");
-const authMiddleware = require("../middleware/authMiddleWare");
+const authMiddleware = require("../middleware/authMiddleware");
 
 bookingRouter.post("/book-ticket", authMiddleware, async (req, res) => {
   try {

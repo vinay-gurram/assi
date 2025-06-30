@@ -1,7 +1,7 @@
 const express = require("express");
 const eventRouter = express.Router();
 const Event = require("../models/events");
-const authMiddleware = require('../middleware/authMiddleWare');
+const authMiddleware = require('../middleware/authMiddleware');
 
 eventRouter.get("/all-events/:city", authMiddleware, async (req, res) => {
   try {

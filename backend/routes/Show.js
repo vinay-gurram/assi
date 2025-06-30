@@ -1,7 +1,7 @@
 const express = require("express");
 const showRouter = express.Router();
 const Show = require("../models/Show");
-const authMiddleware = require("../middleware/authMiddleWare");
+const authMiddleware = require("../middleware/authMiddleware");
 
 
 showRouter.post("/add-show", authMiddleware, async (req, res) => {

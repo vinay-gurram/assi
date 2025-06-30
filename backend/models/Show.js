@@ -1,18 +1,29 @@
 const mongoose = require("mongoose");
 
 const showSchema = new mongoose.Schema({
-  movie: { 
+
+  movieId: { 
     type: mongoose.Schema.Types.ObjectId, 
-    ref: "Movie" 
+    ref: "Movie",
+     required: true 
+    },
+
+  venue: {
+     type: String, 
+     required: true
+     },
+
+  city: {
+     type: String, 
+     required: true
+     },
+
+  startTime: { 
+    type: Date, 
+    required: true 
   },
   
-  venue: { 
-    type: mongoose.Schema.Types.ObjectId,
-     ref: "Venue"
-     },
-     
-  time: Date,
-  bookedSeats: [Number],
+  bookedSeats: [{ type: String }] 
 });
 
 module.exports = mongoose.model("Show", showSchema);

@@ -7,14 +7,11 @@ dotenv.config();
 
 app.use(express.json());
 
-const authUser = require("./routes/auth.js");
-const authMovie = require('./routes/movies.js');
-const authVenueRouter = require('./routes/Venue.js');
-const authShow = require('./routes/Show.js')
-const authBooking = require('./routes/booking.js')
-const authEvent = require('./routes/events.js');
-
-app.use("/api", authEvent);
+const authUser = require("./routes/authuser.js");
+const authMovie = require('./routes/authmovie.js');
+const authVenueRouter = require('./routes/authvenue.js');
+const authShow = require('./routes/authshow.js')
+const authBooking = require('./routes/authbooking.js')
 app.use("/api", authVenueRouter);
 app.use("/api", authUser);
 app.use("/api",authMovie);
@@ -28,6 +25,6 @@ mongoose.connect(process.env.MONGODB_URL)
     console.log("MongoDB connection error:", err.message);
   });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(8002, () => {
+  console.log("Server is running on port 8002");
 });
